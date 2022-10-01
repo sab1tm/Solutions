@@ -1,1 +1,1 @@
-# solutions
+## collection solution
