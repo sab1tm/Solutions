@@ -1,4 +1,4 @@
-package CodeWars;
+package codewars;
 
 // Pirates have notorious difficulty with enunciating. They tend to blur all the letters together and scream at people.
 // At long last, we need a way to unscramble what these pirates are saying.
