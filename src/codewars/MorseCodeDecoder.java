@@ -28,7 +28,7 @@ public class MorseCodeDecoder {
         String result = "";
         for(String word : morseCode.trim().split("   ")) {
             for(String letter : word.split("\\s+")) {
-                result += MorseCode.get(letter);
+                result += "";//MorseCode.get(letter);
             }
             result += ' ';
         }
