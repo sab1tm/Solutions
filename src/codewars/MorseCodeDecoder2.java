@@ -1,5 +1,6 @@
 package codewars;
 
+// https://www.codewars.com/kata/54b72c16cd7f5154e9000457/train/java
 // In this kata you have to write a Morse code decoder for wired electrical telegraph.
 // Electric telegraph is operated on a 2-wire line with a key that, when pressed, connects the wires together, which can be detected on a remote station. The Morse code encodes every character being transmitted as a sequence of "dots" (short presses on the key) and "dashes" (long presses on the key).
 // When transmitting the Morse code, the international standard specifies that:
@@ -36,17 +37,14 @@ public class MorseCodeDecoder2 {
     }
 
     public static String decodeBits(String bits) {
-        int idx = 0;
-        StringBuilder result = new StringBuilder();
-        while (true) {
-            String bitPart = bits.substring(idx, idx + BITCODE_LENGTH);
-            result.append(bitPart);
-            idx += BITCODE_LENGTH;
-            if (idx >= bits.length()) {
-                break;
-            }
-        }
-        return result.toString();
+        System.out.println(bits);
+        return bits
+                .replaceAll("00", "0")
+                .replaceAll("111111", "-")
+                .replaceAll("11", ".")
+                .replaceAll("0000000", "   ")
+                .replaceAll("000", " ")
+                .replaceAll("0", "");
     }
 
     public static String decodeMorse(String morseCode) {
@@ -58,19 +56,5 @@ public class MorseCodeDecoder2 {
             result += ' ';
         }
         return result.trim();
-    }
-
-    private static char convert(String bitCode) {
-        switch (bitCode) {
-            case "0000":
-                return ' ';
-            case "1100":
-                return '·';
-            case "1111":
-                return '-';
-            default:
-                throw new IllegalStateException(
-                        "Illegal bitCode " + bitCode);
-        }
     }
 }
